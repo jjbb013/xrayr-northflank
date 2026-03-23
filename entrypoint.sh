@@ -39,22 +39,9 @@ mkdir -p ${CONFIG_DIR}
 echo "📝 生成 config.yml..."
 envsubst < ${CONFIG_DIR}/config.yml.template > ${CONFIG_FILE}
 
-# 生成 custom_outbound.json - 使用 sed 手动替换
-echo "📝 生成 custom_outbound.json..."
-cp ${CONFIG_DIR}/custom_outbound.json.template ${OUTBOUND_FILE}.tmp
-
-# 替换节点密码变量（如果环境变量存在则替换，否则保留默认值）
-for i in {14..26}; do
-    var_name="NODE_PASSWORD_${i}"
-    default_value="default_password_${i}"
-    actual_value="${!var_name:-$default_value}"
-    # 使用 | 作为分隔符，避免路径中的 / 引起问题
-    sed -i "s|\${${var_name}:-default_password_${i}}|${actual_value}|g" ${OUTBOUND_FILE}.tmp
-done
-
-# 替换其他可能的环境变量
-envsubst < ${OUTBOUND_FILE}.tmp > ${OUTBOUND_FILE}
-rm -f ${OUTBOUND_FILE}.tmp
+# 直接复制 custom_outbound.json（已经是完整配置，无需变量替换）
+echo "📝 复制 custom_outbound.json..."
+cp ${CONFIG_DIR}/custom_outbound.json.template ${OUTBOUND_FILE}
 
 # 验证生成的 JSON 格式
 echo "📝 验证 custom_outbound.json 格式..."
@@ -66,7 +53,7 @@ if ! jq empty ${OUTBOUND_FILE} 2>/dev/null; then
 fi
 echo "✅ JSON 格式正确"
 
-# 复制 route.json（不需要替换变量）
+# 复制 route.json
 cp ${CONFIG_DIR}/route.json ${ROUTE_FILE} 2>/dev/null || echo '{"rules":[]}' > ${ROUTE_FILE}
 
 # 创建 dns.json
