@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  xrayr-node84:
+    build: .
+    container_name: xrayr-node84
+    restart: unless-stopped
+    environment:
+      - XBOARD_API_HOST=${XBOARD_API_HOST}
+      - XBOARD_API_KEY=${XBOARD_API_KEY}
+      - NODE_ID=84
+      - NODE_TYPE=Vless
+      - PANEL_TYPE=NewV2board
+      - LISTEN_IP=0.0.0.0
+      - UPDATE_PERIODIC=60
+      - LOG_LEVEL=warning
+      - ENABLE_TLS=false
+      - OUTBOUND_ADDRESS=yg1.ygkkk.dpdns.org
+      - OUTBOUND_PORT=80
+      - OUTBOUND_UUID=${OUTBOUND_UUID}
+      - OUTBOUND_PATH=/?ed=2560
+      - OUTBOUND_HOST=wboard.will-pan.workers.dev
+    ports:
+      - "80:80"
+    networks:
+      - xrayr-network
+
+  xrayr-node85:
+    build: .
+    container_name: xrayr-node85
+    restart: unless-stopped
+    environment:
+      - XBOARD_API_HOST=${XBOARD_API_HOST}
+      - XBOARD_API_KEY=${XBOARD_API_KEY}
+      - NODE_ID=85
+      - NODE_TYPE=Vless
+      - PANEL_TYPE=NewV2board
+      - LISTEN_IP=0.0.0.0
+      - UPDATE_PERIODIC=60
+      - LOG_LEVEL=warning
+      - ENABLE_TLS=false
+      - OUTBOUND_ADDRESS=yg2.ygkkk.dpdns.org
+      - OUTBOUND_PORT=8080
+      - OUTBOUND_UUID=${OUTBOUND_UUID}
+      - OUTBOUND_PATH=/?ed=2560
+      - OUTBOUND_HOST=wboard.will-pan.workers.dev
+    ports:
+      - "8080:8080"
+    networks:
+      - xrayr-network
+
+  # ... 更多节点配置可以动态生成
+
+networks:
+  xrayr-network:
+    driver: bridge
