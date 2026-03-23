@@ -1,0 +1,45 @@
+{
+  "outbounds": [
+    {
+      "tag": "IPv4_out",
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIPv4"
+      }
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole",
+      "settings": {}
+    },
+    {
+      "tag": "worker-yg1-http",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "yg1.ygkkk.dpdns.org",
+            "port": 80,
+            "users": [
+              {
+                "id": "3c4dd06f-7ede-47ba-b83d-ca16a023cc4f",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "none",
+        "wsSettings": {
+          "path": "/?ed=2560",
+          "headers": {
+            "Host": "wboard.will-pan.workers.dev"
+          }
+        }
+      }
+    }
+  ]
+}
