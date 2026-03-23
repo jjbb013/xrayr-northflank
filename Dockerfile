@@ -5,12 +5,12 @@
 FROM ghcr.io/xrayr-project/xrayr:latest
 
 # 安装必要工具
-RUN apk add --no-cache curl ca-certificates bash jq
+RUN apk add --no-cache curl ca-certificates bash jq gettext
 
 # 创建工作目录
 WORKDIR /etc/XrayR
 
-# 复制配置文件模板
+# 复制配置文件模板（去掉 .template 后缀，直接作为模板文件）
 COPY config.yml.template /etc/XrayR/config.yml.template
 COPY custom_outbound.json.template /etc/XrayR/custom_outbound.json.template
 COPY route.json /etc/XrayR/route.json

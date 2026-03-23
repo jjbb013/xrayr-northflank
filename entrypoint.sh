@@ -35,15 +35,15 @@ echo ""
 # 创建配置目录
 mkdir -p ${CONFIG_DIR}
 
-# 生成 config.yml (替换环境变量)
+# 生成 config.yml (使用 envsubst 替换环境变量)
 echo "📝 生成 config.yml..."
-envsubst < /etc/XrayR/config.yml.template > ${CONFIG_FILE}
+envsubst < ${CONFIG_DIR}/config.yml.template > ${CONFIG_FILE}
 
-# 生成 custom_outbound.json (替换环境变量)
+# 生成 custom_outbound.json (使用 envsubst 替换环境变量)
 echo "📝 生成 custom_outbound.json..."
-envsubst < /etc/XrayR/custom_outbound.json.template > ${OUTBOUND_FILE}
+envsubst < ${CONFIG_DIR}/custom_outbound.json.template > ${OUTBOUND_FILE}
 
-# 复制 route.json
+# 复制 route.json（不需要替换变量）
 cp ${CONFIG_DIR}/route.json ${ROUTE_FILE} 2>/dev/null || echo '{"rules":[]}' > ${ROUTE_FILE}
 
 # 创建 dns.json
@@ -59,7 +59,7 @@ EOF
 
 echo "✅ 配置文件生成完成"
 echo ""
-echo "📁 配置文件:"
+echo "📁 生成的配置文件:"
 echo "  - ${CONFIG_FILE}"
 echo "  - ${OUTBOUND_FILE}"
 echo "  - ${ROUTE_FILE}"
