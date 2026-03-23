@@ -1,0 +1,247 @@
+{
+  "outbounds": [
+    {
+      "tag": "node-14",
+      "protocol": "shadowsocks",
+      "settings": {
+        "servers": [
+          {
+            "address": "yg1.ygkkk.dpdns.org",
+            "port": 80,
+            "method": "aes-128-gcm",
+            "password": "${NODE_PASSWORD_14}",
+            "level": 1
+          }
+        ]
+      }
+    },
+    {
+      "tag": "node-15",
+      "protocol": "shadowsocks",
+      "settings": {
+        "servers": [
+          {
+            "address": "yg2.ygkkk.dpdns.org",
+            "port": 8080,
+            "method": "aes-128-gcm",
+            "password": "${NODE_PASSWORD_15}",
+            "level": 1
+          }
+        ]
+      }
+    },
+    {
+      "tag": "node-16",
+      "protocol": "shadowsocks",
+      "settings": {
+        "servers": [
+          {
+            "address": "yg3.ygkkk.dpdns.org",
+            "port": 8880,
+            "method": "aes-128-gcm",
+            "password": "${NODE_PASSWORD_16}",
+            "level": 1
+          }
+        ]
+      }
+    },
+    {
+      "tag": "node-17",
+      "protocol": "shadowsocks",
+      "settings": {
+        "servers": [
+          {
+            "address": "yg4.ygkkk.dpdns.org",
+            "port": 2052,
+            "method": "aes-128-gcm",
+            "password": "${NODE_PASSWORD_17}",
+            "level": 1
+          }
+        ]
+      }
+    },
+    {
+      "tag": "node-18",
+      "protocol": "shadowsocks",
+      "settings": {
+        "servers": [
+          {
+            "address": "yg5.ygkkk.dpdns.org",
+            "port": 2082,
+            "method": "aes-128-gcm",
+            "password": "${NODE_PASSWORD_18}",
+            "level": 1
+          }
+        ]
+      }
+    },
+    {
+      "tag": "node-19",
+      "protocol": "shadowsocks",
+      "settings": {
+        "servers": [
+          {
+            "address": "yg6.ygkkk.dpdns.org",
+            "port": 2086,
+            "method": "aes-128-gcm",
+            "password": "${NODE_PASSWORD_19}",
+            "level": 1
+          }
+        ]
+      }
+    },
+    {
+      "tag": "node-20",
+      "protocol": "shadowsocks",
+      "settings": {
+        "servers": [
+          {
+            "address": "yg7.ygkkk.dpdns.org",
+            "port": 2095,
+            "method": "aes-128-gcm",
+            "password": "${NODE_PASSWORD_20}",
+            "level": 1
+          }
+        ]
+      }
+    },
+    {
+      "tag": "node-21",
+      "protocol": "shadowsocks",
+      "settings": {
+        "servers": [
+          {
+            "address": "yg8.ygkkk.dpdns.org",
+            "port": 443,
+            "method": "aes-128-gcm",
+            "password": "${NODE_PASSWORD_21}",
+            "level": 1
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "wboard.will-pan.workers.dev",
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "node-22",
+      "protocol": "shadowsocks",
+      "settings": {
+        "servers": [
+          {
+            "address": "yg9.ygkkk.dpdns.org",
+            "port": 8443,
+            "method": "aes-128-gcm",
+            "password": "${NODE_PASSWORD_22}",
+            "level": 1
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "wboard.will-pan.workers.dev",
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "node-23",
+      "protocol": "shadowsocks",
+      "settings": {
+        "servers": [
+          {
+            "address": "yg10.ygkkk.dpdns.org",
+            "port": 2053,
+            "method": "aes-128-gcm",
+            "password": "${NODE_PASSWORD_23}",
+            "level": 1
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "wboard.will-pan.workers.dev",
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "node-24",
+      "protocol": "shadowsocks",
+      "settings": {
+        "servers": [
+          {
+            "address": "yg11.ygkkk.dpdns.org",
+            "port": 2083,
+            "method": "aes-128-gcm",
+            "password": "${NODE_PASSWORD_24}",
+            "level": 1
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "wboard.will-pan.workers.dev",
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "node-25",
+      "protocol": "shadowsocks",
+      "settings": {
+        "servers": [
+          {
+            "address": "yg12.ygkkk.dpdns.org",
+            "port": 2087,
+            "method": "aes-128-gcm",
+            "password": "${NODE_PASSWORD_25}",
+            "level": 1
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "wboard.will-pan.workers.dev",
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "node-26",
+      "protocol": "shadowsocks",
+      "settings": {
+        "servers": [
+          {
+            "address": "yg13.ygkkk.dpdns.org",
+            "port": 2096,
+            "method": "aes-128-gcm",
+            "password": "${NODE_PASSWORD_26}",
+            "level": 1
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "wboard.will-pan.workers.dev",
+          "fingerprint": "chrome"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,426 @@
+# XrayR Northflank 配置模板
+# 通过环境变量注入实际值
+
+Log:
+  Level: ${LOG_LEVEL:-info}
+  AccessPath: /tmp/access.log
+  ErrorPath: /tmp/error.log
+  AccessConsole: true
+  ErrorConsole: true
+
+DnsConfigPath: /etc/XrayR/dns.json
+RouteConfigPath: /etc/XrayR/route.json
+OutboundConfigPath: /etc/XrayR/custom_outbound.json
+
+ConnectionConfig:
+  Handshake: 4
+  ConnIdle: 30
+  UplinkOnly: 2
+  DownlinkOnly: 4
+  BufferSize: 64
+
+# Northflank 单容器多节点配置
+# 所有节点共享同一个 XrayR 实例，通过不同端口区分
+Nodes:
+  # Node 14 (端口 10014)
+  - PanelType: "NewV2board"
+    ApiConfig:
+      ApiHost: "${XBOARD_API_HOST}"
+      ApiKey: "${XBOARD_API_KEY}"
+      NodeID: 14
+      NodeType: Shadowsocks
+      Timeout: 30
+      EnableVless: false
+      SpeedLimit: 0
+      DeviceLimit: 0
+      DisableCustomConfig: false
+    ControllerConfig:
+      ListenIP: 0.0.0.0
+      SendIP: 0.0.0.0
+      UpdatePeriodic: 60
+      EnableDNS: false
+      DNSType: AsIs
+      EnableProxyProtocol: false
+      AutoSpeedLimitConfig:
+        Limit: 0
+        WarnTimes: 0
+        LimitSpeed: 0
+        LimitDuration: 0
+      GlobalDeviceLimitConfig:
+        Enable: false
+      EnableFallback: false
+      FallBackConfigs: []
+      DisableLocalREALITYConfig: false
+      EnableREALITY: false
+
+  # Node 15 (端口 10015)
+  - PanelType: "NewV2board"
+    ApiConfig:
+      ApiHost: "${XBOARD_API_HOST}"
+      ApiKey: "${XBOARD_API_KEY}"
+      NodeID: 15
+      NodeType: Shadowsocks
+      Timeout: 30
+      EnableVless: false
+      SpeedLimit: 0
+      DeviceLimit: 0
+      DisableCustomConfig: false
+    ControllerConfig:
+      ListenIP: 0.0.0.0
+      SendIP: 0.0.0.0
+      UpdatePeriodic: 60
+      EnableDNS: false
+      DNSType: AsIs
+      EnableProxyProtocol: false
+      AutoSpeedLimitConfig:
+        Limit: 0
+        WarnTimes: 0
+        LimitSpeed: 0
+        LimitDuration: 0
+      GlobalDeviceLimitConfig:
+        Enable: false
+      EnableFallback: false
+      FallBackConfigs: []
+      DisableLocalREALITYConfig: false
+      EnableREALITY: false
+
+  # Node 16 (端口 10016)
+  - PanelType: "NewV2board"
+    ApiConfig:
+      ApiHost: "${XBOARD_API_HOST}"
+      ApiKey: "${XBOARD_API_KEY}"
+      NodeID: 16
+      NodeType: Shadowsocks
+      Timeout: 30
+      EnableVless: false
+      SpeedLimit: 0
+      DeviceLimit: 0
+      DisableCustomConfig: false
+    ControllerConfig:
+      ListenIP: 0.0.0.0
+      SendIP: 0.0.0.0
+      UpdatePeriodic: 60
+      EnableDNS: false
+      DNSType: AsIs
+      EnableProxyProtocol: false
+      AutoSpeedLimitConfig:
+        Limit: 0
+        WarnTimes: 0
+        LimitSpeed: 0
+        LimitDuration: 0
+      GlobalDeviceLimitConfig:
+        Enable: false
+      EnableFallback: false
+      FallBackConfigs: []
+      DisableLocalREALITYConfig: false
+      EnableREALITY: false
+
+  # Node 17 (端口 10017)
+  - PanelType: "NewV2board"
+    ApiConfig:
+      ApiHost: "${XBOARD_API_HOST}"
+      ApiKey: "${XBOARD_API_KEY}"
+      NodeID: 17
+      NodeType: Shadowsocks
+      Timeout: 30
+      EnableVless: false
+      SpeedLimit: 0
+      DeviceLimit: 0
+      DisableCustomConfig: false
+    ControllerConfig:
+      ListenIP: 0.0.0.0
+      SendIP: 0.0.0.0
+      UpdatePeriodic: 60
+      EnableDNS: false
+      DNSType: AsIs
+      EnableProxyProtocol: false
+      AutoSpeedLimitConfig:
+        Limit: 0
+        WarnTimes: 0
+        LimitSpeed: 0
+        LimitDuration: 0
+      GlobalDeviceLimitConfig:
+        Enable: false
+      EnableFallback: false
+      FallBackConfigs: []
+      DisableLocalREALITYConfig: false
+      EnableREALITY: false
+
+  # Node 18 (端口 10018)
+  - PanelType: "NewV2board"
+    ApiConfig:
+      ApiHost: "${XBOARD_API_HOST}"
+      ApiKey: "${XBOARD_API_KEY}"
+      NodeID: 18
+      NodeType: Shadowsocks
+      Timeout: 30
+      EnableVless: false
+      SpeedLimit: 0
+      DeviceLimit: 0
+      DisableCustomConfig: false
+    ControllerConfig:
+      ListenIP: 0.0.0.0
+      SendIP: 0.0.0.0
+      UpdatePeriodic: 60
+      EnableDNS: false
+      DNSType: AsIs
+      EnableProxyProtocol: false
+      AutoSpeedLimitConfig:
+        Limit: 0
+        WarnTimes: 0
+        LimitSpeed: 0
+        LimitDuration: 0
+      GlobalDeviceLimitConfig:
+        Enable: false
+      EnableFallback: false
+      FallBackConfigs: []
+      DisableLocalREALITYConfig: false
+      EnableREALITY: false
+
+  # Node 19 (端口 10019)
+  - PanelType: "NewV2board"
+    ApiConfig:
+      ApiHost: "${XBOARD_API_HOST}"
+      ApiKey: "${XBOARD_API_KEY}"
+      NodeID: 19
+      NodeType: Shadowsocks
+      Timeout: 30
+      EnableVless: false
+      SpeedLimit: 0
+      DeviceLimit: 0
+      DisableCustomConfig: false
+    ControllerConfig:
+      ListenIP: 0.0.0.0
+      SendIP: 0.0.0.0
+      UpdatePeriodic: 60
+      EnableDNS: false
+      DNSType: AsIs
+      EnableProxyProtocol: false
+      AutoSpeedLimitConfig:
+        Limit: 0
+        WarnTimes: 0
+        LimitSpeed: 0
+        LimitDuration: 0
+      GlobalDeviceLimitConfig:
+        Enable: false
+      EnableFallback: false
+      FallBackConfigs: []
+      DisableLocalREALITYConfig: false
+      EnableREALITY: false
+
+  # Node 20 (端口 10020)
+  - PanelType: "NewV2board"
+    ApiConfig:
+      ApiHost: "${XBOARD_API_HOST}"
+      ApiKey: "${XBOARD_API_KEY}"
+      NodeID: 20
+      NodeType: Shadowsocks
+      Timeout: 30
+      EnableVless: false
+      SpeedLimit: 0
+      DeviceLimit: 0
+      DisableCustomConfig: false
+    ControllerConfig:
+      ListenIP: 0.0.0.0
+      SendIP: 0.0.0.0
+      UpdatePeriodic: 60
+      EnableDNS: false
+      DNSType: AsIs
+      EnableProxyProtocol: false
+      AutoSpeedLimitConfig:
+        Limit: 0
+        WarnTimes: 0
+        LimitSpeed: 0
+        LimitDuration: 0
+      GlobalDeviceLimitConfig:
+        Enable: false
+      EnableFallback: false
+      FallBackConfigs: []
+      DisableLocalREALITYConfig: false
+      EnableREALITY: false
+
+  # Node 21 (端口 10021)
+  - PanelType: "NewV2board"
+    ApiConfig:
+      ApiHost: "${XBOARD_API_HOST}"
+      ApiKey: "${XBOARD_API_KEY}"
+      NodeID: 21
+      NodeType: Shadowsocks
+      Timeout: 30
+      EnableVless: false
+      SpeedLimit: 0
+      DeviceLimit: 0
+      DisableCustomConfig: false
+    ControllerConfig:
+      ListenIP: 0.0.0.0
+      SendIP: 0.0.0.0
+      UpdatePeriodic: 60
+      EnableDNS: false
+      DNSType: AsIs
+      EnableProxyProtocol: false
+      AutoSpeedLimitConfig:
+        Limit: 0
+        WarnTimes: 0
+        LimitSpeed: 0
+        LimitDuration: 0
+      GlobalDeviceLimitConfig:
+        Enable: false
+      EnableFallback: false
+      FallBackConfigs: []
+      DisableLocalREALITYConfig: false
+      EnableREALITY: false
+
+  # Node 22 (端口 10022)
+  - PanelType: "NewV2board"
+    ApiConfig:
+      ApiHost: "${XBOARD_API_HOST}"
+      ApiKey: "${XBOARD_API_KEY}"
+      NodeID: 22
+      NodeType: Shadowsocks
+      Timeout: 30
+      EnableVless: false
+      SpeedLimit: 0
+      DeviceLimit: 0
+      DisableCustomConfig: false
+    ControllerConfig:
+      ListenIP: 0.0.0.0
+      SendIP: 0.0.0.0
+      UpdatePeriodic: 60
+      EnableDNS: false
+      DNSType: AsIs
+      EnableProxyProtocol: false
+      AutoSpeedLimitConfig:
+        Limit: 0
+        WarnTimes: 0
+        LimitSpeed: 0
+        LimitDuration: 0
+      GlobalDeviceLimitConfig:
+        Enable: false
+      EnableFallback: false
+      FallBackConfigs: []
+      DisableLocalREALITYConfig: false
+      EnableREALITY: false
+
+  # Node 23 (端口 10023)
+  - PanelType: "NewV2board"
+    ApiConfig:
+      ApiHost: "${XBOARD_API_HOST}"
+      ApiKey: "${XBOARD_API_KEY}"
+      NodeID: 23
+      NodeType: Shadowsocks
+      Timeout: 30
+      EnableVless: false
+      SpeedLimit: 0
+      DeviceLimit: 0
+      DisableCustomConfig: false
+    ControllerConfig:
+      ListenIP: 0.0.0.0
+      SendIP: 0.0.0.0
+      UpdatePeriodic: 60
+      EnableDNS: false
+      DNSType: AsIs
+      EnableProxyProtocol: false
+      AutoSpeedLimitConfig:
+        Limit: 0
+        WarnTimes: 0
+        LimitSpeed: 0
+        LimitDuration: 0
+      GlobalDeviceLimitConfig:
+        Enable: false
+      EnableFallback: false
+      FallBackConfigs: []
+      DisableLocalREALITYConfig: false
+      EnableREALITY: false
+
+  # Node 24 (端口 10024)
+  - PanelType: "NewV2board"
+    ApiConfig:
+      ApiHost: "${XBOARD_API_HOST}"
+      ApiKey: "${XBOARD_API_KEY}"
+      NodeID: 24
+      NodeType: Shadowsocks
+      Timeout: 30
+      EnableVless: false
+      SpeedLimit: 0
+      DeviceLimit: 0
+      DisableCustomConfig: false
+    ControllerConfig:
+      ListenIP: 0.0.0.0
+      SendIP: 0.0.0.0
+      UpdatePeriodic: 60
+      EnableDNS: false
+      DNSType: AsIs
+      EnableProxyProtocol: false
+      AutoSpeedLimitConfig:
+        Limit: 0
+        WarnTimes: 0
+        LimitSpeed: 0
+        LimitDuration: 0
+      GlobalDeviceLimitConfig:
+        Enable: false
+      EnableFallback: false
+      FallBackConfigs: []
+      DisableLocalREALITYConfig: false
+      EnableREALITY: false
+
+  # Node 25 (端口 10025)
+  - PanelType: "NewV2board"
+    ApiConfig:
+      ApiHost: "${XBOARD_API_HOST}"
+      ApiKey: "${XBOARD_API_KEY}"
+      NodeID: 25
+      NodeType: Shadowsocks
+      Timeout: 30
+      EnableVless: false
+      SpeedLimit: 0
+      DeviceLimit: 0
+      DisableCustomConfig: false
+    ControllerConfig:
+      ListenIP: 0.0.0.0
+      SendIP: 0.0.0.0
+      UpdatePeriodic: 60
+      EnableDNS: false
+      DNSType: AsIs
+      EnableProxyProtocol: false
+      AutoSpeedLimitConfig:
+        Limit: 0
+        WarnTimes: 0
+        LimitSpeed: 0
+        LimitDuration: 0
+      GlobalDeviceLimitConfig:
+        Enable: false
+      EnableFallback: false
+      FallBackConfigs: []
+      DisableLocalREALITYConfig: false
+      EnableREALITY: false
+
+  # Node 26 (端口 10026)
+  - PanelType: "NewV2board"
+    ApiConfig:
+      ApiHost: "${XBOARD_API_HOST}"
+      ApiKey: "${XBOARD_API_KEY}"
+      NodeID: 26
+      NodeType: Shadowsocks
+      Timeout: 30
+      EnableVless: false
+      SpeedLimit: 0
+      DeviceLimit: 0
+      DisableCustomConfig: false
+    ControllerConfig:
+      ListenIP: 0.0.0.0
+      SendIP: 0.0.0.0
+      UpdatePeriodic: 60
+      EnableDNS: false
+      DNSType: AsIs
+      EnableProxyProtocol: false
+      AutoSpeedLimitConfig:
+        Limit: 0
+        WarnTimes: 0
+        LimitSpeed: 0
+        LimitDuration: 0
+      GlobalDeviceLimitConfig:
+        Enable: false
+      EnableFallback: false
+      FallBackConfigs: []
+      DisableLocalREALITYConfig: false
+      EnableREALITY: false
